@@ -1,6 +1,6 @@
 function setup() {
 	// create a place to draw
-	createCanvas(640, 360);
+	createCanvas(1270, 630);
 }
 
 function draw() {
@@ -8,10 +8,8 @@ function draw() {
 	background(0, 0, 0);
 
 	// set a fill color
-	fill(255, 255, 255);
+	fill(255, 255, 100);
 
-	// set a stroke color
-	stroke(255, 0, 0);
 
 	// draw a circle
 	ellipse(320, 180, 100, 100);
