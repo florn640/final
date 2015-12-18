@@ -10,6 +10,7 @@ var currentPage = "intro";
 //general images
 var nycImg;
 var foodcourtImg;
+var buyImg;
 //food images
 var nuggetsImg;
 var falafelImg;
@@ -41,10 +42,12 @@ var chickpea1Img;
 var chickpea2Img;
 var chickpea3Img;
 
+
 // images
 function preload() {
 	nycImg = loadImage("images/nyc.jpg");
 	foodcourtImg = loadImage("images/foodcourt.png");
+	buyImg = loadImage("images/buy.png");
 	nuggetsImg = loadImage("images/nuggets.png");
 	falafelImg = loadImage("images/falafel.png");
 	burgerImg = loadImage("images/burger.png");
@@ -149,52 +152,22 @@ function draw() {
 function drawPageIntro() {
 	image(foodcourtImg, 0, 0);
 	if (visitedBurger === true) {
-		noStroke();
-		rect(40, 330, 80, 20);
-		textSize(20);
-		textFont("Georgia");
-		fill(0);
-		text("BUY", 50, 340);
+		image(buyImg, 465, 537);
 	}
 	if (visitedNuggets === true) {
-		noStroke();
-		rect(40, 330, 80, 20);
-		textSize(20);
-		textFont("Georgia");
-		fill(0);
-		text("BUY", 50, 340);
+		image(buyImg, 59, 235);
 	}
 	if (visitedFalafel === true) {
-		noStroke();
-		rect(40, 330, 80, 20);
-		textSize(20);
-		textFont("Georgia");
-		fill(0);
-		text("BUY", 50, 340);
+		image(buyImg, 256, 400);
 	}
 	if (visitedBowl === true) {
-		noStroke();
-		rect(40, 330, 80, 20);
-		textSize(20);
-		textFont("Georgia");
-		fill(0);
-		text("BUY", 50, 340);
+		image(buyImg, 761, 537);
 	}
 	if (visitedHotdog === true) {
-		noStroke();
-		rect(40, 330, 80, 20);
-		textSize(20);
-		textFont("Georgia");
-		fill(0);
-		text("BUY", 50, 340);
+		image(buyImg, 967, 400);
 	}
 	if (visitedPizza === true) {
-		noStroke();
-		rect(40, 330, 80, 20);
-		textSize(20);
-		textFont("Georgia");
-		fill(0);
-		text("BUY", 50, 340);
+		image(buyImg, 1140, 235);
 	}
 }
 
