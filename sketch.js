@@ -207,36 +207,42 @@ function drawPageIntro() {
 		if (mouseIsPressed)
 			if (mouseX > 466 && mouseX < 530 && mouseY > 540 && mouseY < 602) {
 				image(thanksImg, 0, 0);
+				noLoop();
 			}
 	}
 	if (visitedNuggets === true) {
 		if (mouseIsPressed)
 			if (mouseX > 59 && mouseX < 123 && mouseY > 236 && mouseY < 300) {
 				image(thanksImg, 0, 0);
+				noLoop();
 			}
 	}
 	if (visitedFalafel === true) {
 		if (mouseIsPressed)
 			if (mouseX > 256 && mouseX < 321 && mouseY > 400 && mouseY < 465) {
 				image(congratulationsImg, 0, 0);
+				noLoop();
 			}
 	}
 	if (visitedBowl === true) {
 		if (mouseIsPressed)
 			if (mouseX > 761 && mouseX < 826 && mouseY > 540 && mouseY < 602) {
 				image(congratulationsImg, 0, 0);
+				noLoop();
 			}
 	}
 	if (visitedHotdog === true) {
 		if (mouseIsPressed)
 			if (mouseX > 968 && mouseX < 1032 && mouseY > 400 && mouseY < 465) {
 				image(thanksImg, 0, 0);
+				noLoop();
 			}
 	}
 	if (visitedPizza === true) {
 		if (mouseIsPressed)
 			if (mouseX > 1139 && mouseX < 1205 && mouseY > 236 && mouseY < 300) {
 				image(thanksImg, 0, 0);
+				noLoop();
 			}
 	}
 
