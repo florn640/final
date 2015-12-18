@@ -89,21 +89,25 @@ function mousePressed() {
 		if (mouseX > 3 && mouseX < 234 && mouseY > 52 && mouseY < 310) {
 			currentPage = "nuggets";
 		}
-		if (mouseX > 146 && mouseX < 392 && mouseY > 222 && mouseY < 467) {
+		if (mouseX > 146 && mouseX < 392 && mouseY > 276 && mouseY < 428) {
 			currentPage = "falafel";
 		}
-		if (mouseX > 647 && mouseX < 929 && mouseY > 327 && mouseY < 607) {
+		if (mouseX > 647 && mouseX < 879 && mouseY > 327 && mouseY < 608) {
 			currentPage = "bowl";
-			//	}
-		} else if (currentPage === "burger") {
-			currentPage = "intro";
-		} else if (currentPage === "nuggets") {
-			currentPage = "intro";
-		} else if (currentPage === "falafel") {
-			currentPage = "intro";
-		} else if (currentPage === "bowl") {
-			currentPage = "intro";
 		}
+		if (mouseX > 883 && mouseX < 1091 && mouseY > 276 && mouseY < 428) {
+			currentPage = "hotdog";
+		}
+	} else if (currentPage === "burger") {
+		currentPage = "intro";
+	} else if (currentPage === "nuggets") {
+		currentPage = "intro";
+	} else if (currentPage === "falafel") {
+		currentPage = "intro";
+	} else if (currentPage === "bowl") {
+		currentPage = "intro";
+	} else if (currentPage === "hotdog") {
+		currentPage = "intro";
 	}
 }
 //define which pages to draw after checking "currrent page"
@@ -118,9 +122,10 @@ function draw() {
 		drawPageFalafel();
 	} else if (currentPage === "bowl") {
 		drawPageBowl();
+	} else if (currentPage === "hotdog") {
+		drawPageHotdog();
 	}
 }
-//}
 
 //define pages
 function drawPageIntro() {
@@ -194,6 +199,23 @@ function drawPageBowl() {
 			image(protein3Img, 700, 150);
 		} else {
 			image(protein4Img, 700, 150);
+		}
+	}
+}
+
+function drawPageHotdog() {
+	image(hotdogImg, 0, 0);
+	for (var i = 0; i < 10; i++) {
+		frameRate(8);
+		var sadImages = random(1);
+		if (sadImages < 0.25) {
+			image(pig11Img, 700, 150);
+		} else if (sadImages > 0.25 && sadImages < 0.5) {
+			image(pig2Img, 700, 150);
+		} else if (sadImages > 0.5 && sadImages < 0.75) {
+			image(pig3Img, 700, 150);
+		} else {
+			image(pig4Img, 700, 150);
 		}
 	}
 }
