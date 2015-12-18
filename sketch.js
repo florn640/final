@@ -1,5 +1,11 @@
 //variables
-var visitedCow = false;
+var visitedBurger = false;
+var visitedNuggets = false;
+var visitedFalafel = false;
+var visitedBowl = false;
+var visitedHotdog = false;
+var visitedPizza = false;
+
 var currentPage = "intro";
 //general images
 var nycImg;
@@ -82,21 +88,29 @@ function setup() {
 function mousePressed() {
 	console.log(mouseX, mouseY);
 	if (currentPage === "intro") {
-		if (mouseX > 354 && mouseX < 644 && mouseY > 353 && mouseY < 607) {
-			visitedCow = true;
+		if (mouseX > 446 && mouseX < 547 && mouseY > 424 && mouseY < 541) {
+			visitedBurger = true;
 			currentPage = "burger";
 		}
-		if (mouseX > 3 && mouseX < 234 && mouseY > 52 && mouseY < 310) {
+		if (mouseX > 44 && mouseX < 144 && mouseY > 132 && mouseY < 244) {
+			visitedNuggets = true;
 			currentPage = "nuggets";
 		}
-		if (mouseX > 146 && mouseX < 392 && mouseY > 276 && mouseY < 428) {
+		if (mouseX > 233 && mouseX < 352 && mouseY > 296 && mouseY < 397) {
+			visitedFalafel = true;
 			currentPage = "falafel";
 		}
-		if (mouseX > 647 && mouseX < 879 && mouseY > 327 && mouseY < 608) {
+		if (mouseX > 740 && mouseX < 848 && mouseY > 431 && mouseY < 529) {
+			visitedBowl = true;
 			currentPage = "bowl";
 		}
-		if (mouseX > 883 && mouseX < 1091 && mouseY > 276 && mouseY < 428) {
+		if (mouseX > 948 && mouseX < 1060 && mouseY > 326 && mouseY < 401) {
+			visitedHotdog = true;
 			currentPage = "hotdog";
+		}
+		if (mouseX > 1105 && mouseX < 1240 && mouseY > 138 && mouseY < 237) {
+			visitedPizza = true;
+			currentPage = "pizza";
 		}
 	} else if (currentPage === "burger") {
 		currentPage = "intro";
@@ -107,6 +121,8 @@ function mousePressed() {
 	} else if (currentPage === "bowl") {
 		currentPage = "intro";
 	} else if (currentPage === "hotdog") {
+		currentPage = "intro";
+	} else if (currentPage === "pizza") {
 		currentPage = "intro";
 	}
 }
@@ -124,20 +140,61 @@ function draw() {
 		drawPageBowl();
 	} else if (currentPage === "hotdog") {
 		drawPageHotdog();
+	} else if (currentPage === "pizza") {
+		drawPagePizza();
 	}
 }
 
 //define pages
 function drawPageIntro() {
 	image(foodcourtImg, 0, 0);
-	if (visitedCow === true) {
+	if (visitedBurger === true) {
 		noStroke();
 		rect(40, 330, 80, 20);
 		textSize(20);
 		textFont("Georgia");
 		fill(0);
 		text("BUY", 50, 340);
-
+	}
+	if (visitedNuggets === true) {
+		noStroke();
+		rect(40, 330, 80, 20);
+		textSize(20);
+		textFont("Georgia");
+		fill(0);
+		text("BUY", 50, 340);
+	}
+	if (visitedFalafel === true) {
+		noStroke();
+		rect(40, 330, 80, 20);
+		textSize(20);
+		textFont("Georgia");
+		fill(0);
+		text("BUY", 50, 340);
+	}
+	if (visitedBowl === true) {
+		noStroke();
+		rect(40, 330, 80, 20);
+		textSize(20);
+		textFont("Georgia");
+		fill(0);
+		text("BUY", 50, 340);
+	}
+	if (visitedHotdog === true) {
+		noStroke();
+		rect(40, 330, 80, 20);
+		textSize(20);
+		textFont("Georgia");
+		fill(0);
+		text("BUY", 50, 340);
+	}
+	if (visitedPizza === true) {
+		noStroke();
+		rect(40, 330, 80, 20);
+		textSize(20);
+		textFont("Georgia");
+		fill(0);
+		text("BUY", 50, 340);
 	}
 }
 
@@ -216,6 +273,23 @@ function drawPageHotdog() {
 			image(pig3Img, 700, 150);
 		} else {
 			image(pig4Img, 700, 150);
+		}
+	}
+}
+
+function drawPagePizza() {
+	image(pizzaImg, 0, 0);
+	for (var i = 0; i < 10; i++) {
+		frameRate(8);
+		var sadImages = random(1);
+		if (sadImages < 0.25) {
+			image(pizza1Img, 700, 150);
+		} else if (sadImages > 0.25 && sadImages < 0.5) {
+			image(pizza2Img, 700, 150);
+		} else if (sadImages > 0.5 && sadImages < 0.75) {
+			image(pizza3Img, 700, 150);
+		} else {
+			image(pizza4Img, 700, 150);
 		}
 	}
 }
