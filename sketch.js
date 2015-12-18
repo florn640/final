@@ -6,7 +6,7 @@ var visitedBowl = false;
 var visitedHotdog = false;
 var visitedPizza = false;
 var didClick = false;
-var buyButton = false;
+var mouseWasPressed;
 
 var currentPage = "intro";
 //general images
@@ -187,46 +187,59 @@ function drawPageIntro() {
 	image(foodcourtImg, 0, 0);
 	if (visitedBurger === true) {
 		image(buyImg, 465, 537);
+	}
+	if (visitedNuggets === true) {
+		image(buyImg, 59, 235);
+	}
+	if (visitedFalafel === true) {
+		image(buyImg, 256, 400);
+	}
+	if (visitedBowl === true) {
+		image(buyImg, 761, 537);
+	}
+	if (visitedHotdog === true) {
+		image(buyImg, 967, 400);
+	}
+	if (visitedPizza === true) {
+		image(buyImg, 1140, 235);
+	}
+	if (visitedBurger === true) {
 		if (mouseIsPressed)
 			if (mouseX > 466 && mouseX < 530 && mouseY > 540 && mouseY < 602) {
 				image(thanksImg, 0, 0);
 			}
 	}
 	if (visitedNuggets === true) {
-		image(buyImg, 59, 235);
 		if (mouseIsPressed)
 			if (mouseX > 59 && mouseX < 123 && mouseY > 236 && mouseY < 300) {
 				image(thanksImg, 0, 0);
 			}
 	}
 	if (visitedFalafel === true) {
-		image(buyImg, 256, 400);
 		if (mouseIsPressed)
 			if (mouseX > 256 && mouseX < 321 && mouseY > 400 && mouseY < 465) {
 				image(congratulationsImg, 0, 0);
 			}
 	}
 	if (visitedBowl === true) {
-		image(buyImg, 761, 537);
 		if (mouseIsPressed)
 			if (mouseX > 761 && mouseX < 826 && mouseY > 540 && mouseY < 602) {
 				image(congratulationsImg, 0, 0);
 			}
 	}
 	if (visitedHotdog === true) {
-		image(buyImg, 967, 400);
 		if (mouseIsPressed)
 			if (mouseX > 968 && mouseX < 1032 && mouseY > 400 && mouseY < 465) {
 				image(thanksImg, 0, 0);
 			}
 	}
 	if (visitedPizza === true) {
-		image(buyImg, 1140, 235);
 		if (mouseIsPressed)
 			if (mouseX > 1139 && mouseX < 1205 && mouseY > 236 && mouseY < 300) {
 				image(thanksImg, 0, 0);
 			}
 	}
+
 }
 
 function drawPageBurger() {
