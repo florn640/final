@@ -6,12 +6,17 @@ var visitedBowl = false;
 var visitedHotdog = false;
 var visitedPizza = false;
 var didClick = false;
+var buyButton = false;
 
 var currentPage = "intro";
 //general images
 var nycImg;
 var foodcourtImg;
 var buyImg;
+var cloud1Img;
+var cloud2Img;
+var thanksImg;
+var congratulationsImg;
 //food images
 var nuggetsImg;
 var falafelImg;
@@ -51,6 +56,10 @@ function preload() {
 	nycImg = loadImage("images/nyc.png");
 	foodcourtImg = loadImage("images/foodcourt.png");
 	buyImg = loadImage("images/buy.png");
+	cloud1Img = loadImage("images/cloud1.png");
+	cloud2Img = loadImage("images/cloud2.png");
+	thanksImg = loadImage("images/thanks.png");
+	congratulationsImg = loadImage("images/congratulations.png");
 	nuggetsImg = loadImage("images/nuggets.png");
 	falafelImg = loadImage("images/falafel.png");
 	burgerImg = loadImage("images/burger.png");
@@ -92,42 +101,54 @@ function mousePressed() {
 	} else {
 		console.log(mouseX, mouseY);
 		if (currentPage === "intro") {
-			if (mouseX > 446 && mouseX < 547 && mouseY > 424 && mouseY < 541) {
+			if (mouseX > 446 && mouseX < 547 && mouseY > 350 && mouseY < 526) {
 				visitedBurger = true;
 				currentPage = "burger";
 			}
-			if (mouseX > 44 && mouseX < 144 && mouseY > 132 && mouseY < 244) {
+			if (mouseX > 44 && mouseX < 144 && mouseY > 100 && mouseY < 230) {
 				visitedNuggets = true;
 				currentPage = "nuggets";
 			}
-			if (mouseX > 233 && mouseX < 352 && mouseY > 296 && mouseY < 397) {
+			if (mouseX > 233 && mouseX < 352 && mouseY > 260 && mouseY < 397) {
 				visitedFalafel = true;
 				currentPage = "falafel";
 			}
-			if (mouseX > 740 && mouseX < 848 && mouseY > 431 && mouseY < 529) {
+			if (mouseX > 740 && mouseX < 848 && mouseY > 360 && mouseY < 529) {
 				visitedBowl = true;
 				currentPage = "bowl";
 			}
-			if (mouseX > 948 && mouseX < 1060 && mouseY > 326 && mouseY < 401) {
+			if (mouseX > 948 && mouseX < 1060 && mouseY > 251 && mouseY < 391) {
 				visitedHotdog = true;
 				currentPage = "hotdog";
 			}
-			if (mouseX > 1105 && mouseX < 1240 && mouseY > 138 && mouseY < 237) {
+			if (mouseX > 1105 && mouseX < 1240 && mouseY > 92 && mouseY < 222) {
 				visitedPizza = true;
 				currentPage = "pizza";
 			}
 		} else if (currentPage === "burger") {
-			currentPage = "intro";
+			if (mouseX > 0 && mouseX < 170 && mouseY > 0 && mouseY < 62) {
+				currentPage = "intro";
+			}
 		} else if (currentPage === "nuggets") {
-			currentPage = "intro";
+			if (mouseX > 0 && mouseX < 170 && mouseY > 0 && mouseY < 62) {
+				currentPage = "intro";
+			}
 		} else if (currentPage === "falafel") {
-			currentPage = "intro";
+			if (mouseX > 0 && mouseX < 170 && mouseY > 0 && mouseY < 62) {
+				currentPage = "intro";
+			}
 		} else if (currentPage === "bowl") {
-			currentPage = "intro";
+			if (mouseX > 0 && mouseX < 170 && mouseY > 0 && mouseY < 62) {
+				currentPage = "intro";
+			}
 		} else if (currentPage === "hotdog") {
-			currentPage = "intro";
+			if (mouseX > 0 && mouseX < 170 && mouseY > 0 && mouseY < 62) {
+				currentPage = "intro";
+			}
 		} else if (currentPage === "pizza") {
-			currentPage = "intro";
+			if (mouseX > 0 && mouseX < 170 && mouseY > 0 && mouseY < 62) {
+				currentPage = "intro";
+			}
 		}
 	}
 }
@@ -135,6 +156,9 @@ function mousePressed() {
 //define which pages to draw after checking "currrent page"
 function draw() {
 	if (!didClick) {
+		background(249, 252, 254);
+		image(cloud1Img, random(0, 5), 0);
+		image(cloud2Img, random(500, 505), 10);
 		image(nycImg, 0, 0, width, height);
 	} else {
 		if (currentPage === "intro") {
@@ -157,24 +181,51 @@ function draw() {
 
 //define pages
 function drawPageIntro() {
+	background(249, 252, 254);
+	image(cloud1Img, random(0, 3), 0);
+	image(cloud2Img, random(580, 583), 150);
 	image(foodcourtImg, 0, 0);
 	if (visitedBurger === true) {
 		image(buyImg, 465, 537);
+		if (mouseIsPressed)
+			if (mouseX > 466 && mouseX < 530 && mouseY > 540 && mouseY < 602) {
+				image(thanksImg, 0, 0);
+			}
 	}
 	if (visitedNuggets === true) {
 		image(buyImg, 59, 235);
+		if (mouseIsPressed)
+			if (mouseX > 59 && mouseX < 123 && mouseY > 236 && mouseY < 300) {
+				image(thanksImg, 0, 0);
+			}
 	}
 	if (visitedFalafel === true) {
 		image(buyImg, 256, 400);
+		if (mouseIsPressed)
+			if (mouseX > 256 && mouseX < 321 && mouseY > 400 && mouseY < 465) {
+				image(congratulationsImg, 0, 0);
+			}
 	}
 	if (visitedBowl === true) {
 		image(buyImg, 761, 537);
+		if (mouseIsPressed)
+			if (mouseX > 761 && mouseX < 826 && mouseY > 540 && mouseY < 602) {
+				image(congratulationsImg, 0, 0);
+			}
 	}
 	if (visitedHotdog === true) {
 		image(buyImg, 967, 400);
+		if (mouseIsPressed)
+			if (mouseX > 968 && mouseX < 1032 && mouseY > 400 && mouseY < 465) {
+				image(thanksImg, 0, 0);
+			}
 	}
 	if (visitedPizza === true) {
 		image(buyImg, 1140, 235);
+		if (mouseIsPressed)
+			if (mouseX > 1139 && mouseX < 1205 && mouseY > 236 && mouseY < 300) {
+				image(thanksImg, 0, 0);
+			}
 	}
 }
 
