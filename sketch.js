@@ -45,7 +45,7 @@ var chickpea3Img;
 
 // images
 function preload() {
-	nycImg = loadImage("images/nyc.jpg");
+	nycImg = loadImage("images/nyc.png");
 	foodcourtImg = loadImage("images/foodcourt.png");
 	buyImg = loadImage("images/buy.png");
 	nuggetsImg = loadImage("images/nuggets.png");
@@ -83,9 +83,7 @@ function setup() {
 
 }
 
-//function draw() {
-//image(nycImg, 0, 0);
-//}
+
 
 //change from page to page when clicking
 function mousePressed() {
@@ -129,6 +127,7 @@ function mousePressed() {
 		currentPage = "intro";
 	}
 }
+
 //define which pages to draw after checking "currrent page"
 function draw() {
 	if (currentPage === "intro") {
