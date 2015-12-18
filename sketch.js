@@ -74,9 +74,10 @@ function setup() {
 
 }
 
-function draw() {
-	//	image(nycImg, 0, 0);
-}
+//function draw() {
+//image(nycImg, 0, 0);
+//}
+
 //change from page to page when clicking
 function mousePressed() {
 	console.log(mouseX, mouseY);
@@ -91,111 +92,108 @@ function mousePressed() {
 		if (mouseX > 146 && mouseX < 392 && mouseY > 222 && mouseY < 467) {
 			currentPage = "falafel";
 		}
-		//	if (mouseX > 300 && mouseX < 492 && mouseY > 300 && mouseY < 500) {
-		//		currentPage = "bowl";
-		//	}
-
-	} else if (currentPage === "burger") {
-		currentPage = "intro";
-	} else if (currentPage === "nuggets") {
-		currentPage = "intro";
-	} else if (currentPage === "falafel") {
-		currentPage = "intro";
-		//	} else if (currentPage === "bowl") {
-		//		currentPage = "intro";
-		//	}
-
-	}
-	//define which pages to draw after checking "currrent page"
-	function draw() {
-		if (currentPage === "intro") {
-			drawPageIntro();
+		if (mouseX > 647 && mouseX < 929 && mouseY > 327 && mouseY < 607) {
+			currentPage = "bowl";
+			//	}
 		} else if (currentPage === "burger") {
-			drawPageBurger();
+			currentPage = "intro";
 		} else if (currentPage === "nuggets") {
-			drawPageNuggets();
+			currentPage = "intro";
 		} else if (currentPage === "falafel") {
-			drawPageFalafel();
-			//	} else if (currentPage === "bowl") {
-			//		drawPageBowl();
-		}
-
-		console.log(currentPage);
-	}
-
-	//define pages
-	function drawPageIntro() {
-		image(foodcourtImg, 0, 0);
-		if (visitedCow === true) {
-			noStroke();
-			rect(40, 330, 80, 20);
-			textSize(20);
-			textFont("Georgia");
-			fill(0);
-			text("BUY", 50, 340);
-
+			currentPage = "intro";
+		} else if (currentPage === "bowl") {
+			currentPage = "intro";
 		}
 	}
+}
+//define which pages to draw after checking "currrent page"
+function draw() {
+	if (currentPage === "intro") {
+		drawPageIntro();
+	} else if (currentPage === "burger") {
+		drawPageBurger();
+	} else if (currentPage === "nuggets") {
+		drawPageNuggets();
+	} else if (currentPage === "falafel") {
+		drawPageFalafel();
+	} else if (currentPage === "bowl") {
+		drawPageBowl();
+	}
+}
+//}
 
-	function drawPageBurger() {
-		image(burgerImg, 0, 0);
-		for (var i = 0; i < 10; i++) {
-			frameRate(8);
-			var sadImages = random(1);
-			if (sadImages < 0.3) {
-				image(cow1Img, 700, 150);
-			} else if (sadImages > 0.3 && sadImages < 0.7) {
-				image(cow2Img, 700, 150);
-			} else {
-				image(cow3Img, 700, 150);
-			}
+//define pages
+function drawPageIntro() {
+	image(foodcourtImg, 0, 0);
+	if (visitedCow === true) {
+		noStroke();
+		rect(40, 330, 80, 20);
+		textSize(20);
+		textFont("Georgia");
+		fill(0);
+		text("BUY", 50, 340);
+
+	}
+}
+
+function drawPageBurger() {
+	image(burgerImg, 0, 0);
+	for (var i = 0; i < 10; i++) {
+		frameRate(8);
+		var sadImages = random(1);
+		if (sadImages < 0.3) {
+			image(cow1Img, 700, 150);
+		} else if (sadImages > 0.3 && sadImages < 0.7) {
+			image(cow2Img, 700, 150);
+		} else {
+			image(cow3Img, 700, 150);
 		}
 	}
+}
 
-	function drawPageFalafel() {
-		image(falafelImg, 0, 0);
-		for (var i = 0; i < 10; i++) {
-			frameRate(8);
-			var sadImages = random(1);
-			if (sadImages < 0.3) {
-				image(chickpea1Img, 700, 150);
-			} else if (sadImages > 0.3 && sadImages < 0.7) {
-				image(chickpea2Img, 700, 150);
-			} else {
-				image(chickpea3Img, 700, 150);
-			}
+function drawPageFalafel() {
+	image(falafelImg, 0, 0);
+	for (var i = 0; i < 10; i++) {
+		frameRate(8);
+		var sadImages = random(1);
+		if (sadImages < 0.3) {
+			image(chickpea1Img, 700, 150);
+		} else if (sadImages > 0.3 && sadImages < 0.7) {
+			image(chickpea2Img, 700, 150);
+		} else {
+			image(chickpea3Img, 700, 150);
 		}
 	}
+}
 
-	function drawPageNuggets() {
-		image(nuggetsImg, 0, 0);
-		for (var i = 0; i < 10; i++) {
-			frameRate(8);
-			var sadImages = random(1);
-			if (sadImages < 0.3) {
-				image(chicken1Img, 700, 150);
-			} else if (sadImages > 0.3 && sadImages < 0.7) {
-				image(chicken2Img, 700, 150);
-			} else {
-				image(chicken3Img, 700, 150);
-			}
+function drawPageNuggets() {
+	image(nuggetsImg, 0, 0);
+	for (var i = 0; i < 10; i++) {
+		frameRate(8);
+		var sadImages = random(1);
+		if (sadImages < 0.3) {
+			image(chicken1Img, 700, 150);
+		} else if (sadImages > 0.3 && sadImages < 0.7) {
+			image(chicken2Img, 700, 150);
+		} else {
+			image(chicken3Img, 700, 150);
 		}
 	}
+}
 
-	//function drawPageBowl() {
-	//image(bowlImg, 0, 0);
-	//for (var i = 0; i < 10; i++) {
-	//	frameRate(8);
-	//	var sadImages = random(1);
-	//	if (sadImages < 0.25) {
-	//		image(protein1Img, 700, 150);
-	//	} else if (sadImages > 0.25 && sadImages < 0.5) {
-	//			image(protein2Img, 700, 150);
-	//		} else if (sadImages > 0.5 && sadImages < 0.75) {
-	//		image(protein3Img, 700, 150);
-	//		} else {
-	//			image(protein4Img, 700, 150);
-	//	}
-	//}
-
+function drawPageBowl() {
+	image(bowlImg, 0, 0);
+	for (var i = 0; i < 10; i++) {
+		frameRate(8);
+		var sadImages = random(1);
+		if (sadImages < 0.25) {
+			image(protein1Img, 700, 150);
+		} else if (sadImages > 0.25 && sadImages < 0.5) {
+			image(protein2Img, 700, 150);
+		} else if (sadImages > 0.5 && sadImages < 0.75) {
+			image(protein3Img, 700, 150);
+		} else {
+			image(protein4Img, 700, 150);
+		}
+	}
 }
