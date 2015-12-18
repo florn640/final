@@ -209,7 +209,7 @@ function drawPageHotdog() {
 		frameRate(8);
 		var sadImages = random(1);
 		if (sadImages < 0.25) {
-			image(pig11Img, 700, 150);
+			image(pig1Img, 700, 150);
 		} else if (sadImages > 0.25 && sadImages < 0.5) {
 			image(pig2Img, 700, 150);
 		} else if (sadImages > 0.5 && sadImages < 0.75) {
