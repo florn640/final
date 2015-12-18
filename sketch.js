@@ -5,6 +5,7 @@ var visitedFalafel = false;
 var visitedBowl = false;
 var visitedHotdog = false;
 var visitedPizza = false;
+var didClick = false;
 
 var currentPage = "intro";
 //general images
@@ -45,6 +46,8 @@ var chickpea3Img;
 
 // images
 function preload() {
+	//overlay = load
+
 	nycImg = loadImage("images/nyc.png");
 	foodcourtImg = loadImage("images/foodcourt.png");
 	buyImg = loadImage("images/buy.png");
@@ -75,75 +78,80 @@ function preload() {
 	chickpea1Img = loadImage("images/chickpea1.png");
 	chickpea2Img = loadImage("images/chickpea2.png");
 	chickpea3Img = loadImage("images/chickpea3.png");
-
 }
 
 function setup() {
 	createCanvas(1280, 610);
-
 }
-
-
-
 //change from page to page when clicking
 function mousePressed() {
-	console.log(mouseX, mouseY);
-	if (currentPage === "intro") {
-		if (mouseX > 446 && mouseX < 547 && mouseY > 424 && mouseY < 541) {
-			visitedBurger = true;
-			currentPage = "burger";
+	if (!didClick) {
+		if (mouseX > 490 && mouseX < 780 && mouseY > 331 && mouseY < 602) {
+			didClick = true;
 		}
-		if (mouseX > 44 && mouseX < 144 && mouseY > 132 && mouseY < 244) {
-			visitedNuggets = true;
-			currentPage = "nuggets";
+	} else {
+		console.log(mouseX, mouseY);
+		if (currentPage === "intro") {
+			if (mouseX > 446 && mouseX < 547 && mouseY > 424 && mouseY < 541) {
+				visitedBurger = true;
+				currentPage = "burger";
+			}
+			if (mouseX > 44 && mouseX < 144 && mouseY > 132 && mouseY < 244) {
+				visitedNuggets = true;
+				currentPage = "nuggets";
+			}
+			if (mouseX > 233 && mouseX < 352 && mouseY > 296 && mouseY < 397) {
+				visitedFalafel = true;
+				currentPage = "falafel";
+			}
+			if (mouseX > 740 && mouseX < 848 && mouseY > 431 && mouseY < 529) {
+				visitedBowl = true;
+				currentPage = "bowl";
+			}
+			if (mouseX > 948 && mouseX < 1060 && mouseY > 326 && mouseY < 401) {
+				visitedHotdog = true;
+				currentPage = "hotdog";
+			}
+			if (mouseX > 1105 && mouseX < 1240 && mouseY > 138 && mouseY < 237) {
+				visitedPizza = true;
+				currentPage = "pizza";
+			}
+		} else if (currentPage === "burger") {
+			currentPage = "intro";
+		} else if (currentPage === "nuggets") {
+			currentPage = "intro";
+		} else if (currentPage === "falafel") {
+			currentPage = "intro";
+		} else if (currentPage === "bowl") {
+			currentPage = "intro";
+		} else if (currentPage === "hotdog") {
+			currentPage = "intro";
+		} else if (currentPage === "pizza") {
+			currentPage = "intro";
 		}
-		if (mouseX > 233 && mouseX < 352 && mouseY > 296 && mouseY < 397) {
-			visitedFalafel = true;
-			currentPage = "falafel";
-		}
-		if (mouseX > 740 && mouseX < 848 && mouseY > 431 && mouseY < 529) {
-			visitedBowl = true;
-			currentPage = "bowl";
-		}
-		if (mouseX > 948 && mouseX < 1060 && mouseY > 326 && mouseY < 401) {
-			visitedHotdog = true;
-			currentPage = "hotdog";
-		}
-		if (mouseX > 1105 && mouseX < 1240 && mouseY > 138 && mouseY < 237) {
-			visitedPizza = true;
-			currentPage = "pizza";
-		}
-	} else if (currentPage === "burger") {
-		currentPage = "intro";
-	} else if (currentPage === "nuggets") {
-		currentPage = "intro";
-	} else if (currentPage === "falafel") {
-		currentPage = "intro";
-	} else if (currentPage === "bowl") {
-		currentPage = "intro";
-	} else if (currentPage === "hotdog") {
-		currentPage = "intro";
-	} else if (currentPage === "pizza") {
-		currentPage = "intro";
 	}
 }
 
 //define which pages to draw after checking "currrent page"
 function draw() {
-	if (currentPage === "intro") {
-		drawPageIntro();
-	} else if (currentPage === "burger") {
-		drawPageBurger();
-	} else if (currentPage === "nuggets") {
-		drawPageNuggets();
-	} else if (currentPage === "falafel") {
-		drawPageFalafel();
-	} else if (currentPage === "bowl") {
-		drawPageBowl();
-	} else if (currentPage === "hotdog") {
-		drawPageHotdog();
-	} else if (currentPage === "pizza") {
-		drawPagePizza();
+	if (!didClick) {
+		image(nycImg, 0, 0, width, height);
+	} else {
+		if (currentPage === "intro") {
+			drawPageIntro();
+		} else if (currentPage === "burger") {
+			drawPageBurger();
+		} else if (currentPage === "nuggets") {
+			drawPageNuggets();
+		} else if (currentPage === "falafel") {
+			drawPageFalafel();
+		} else if (currentPage === "bowl") {
+			drawPageBowl();
+		} else if (currentPage === "hotdog") {
+			drawPageHotdog();
+		} else if (currentPage === "pizza") {
+			drawPagePizza();
+		}
 	}
 }
 
